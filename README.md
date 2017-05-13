@@ -1,0 +1,2 @@
+# ScalatraWebSocketsKnockOut
+Scalatra WebSockets Atmosphere KnockOut
