@@ -1,0 +1,40 @@
+/*
+    GENERAL
+*/
+#content {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.blurb {
+    padding: 0.5em;
+}
+
+/*
+    "TRELLO"
+*/
+
+#trello .t-list {
+    padding: 1em;
+}
+
+#trello .list-title {
+    border-bottom: 2px solid darkgray;
+    margin-bottom: 1em;
+}
+
+#trello .list-add {
+    margin-top: 1em;
+}
+
+/*
+    FUTURES
+*/
+
+#runawayFutures span.error {
+    color: red;
+}

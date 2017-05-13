@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Scalatra WebSockets KnockOut</title>
+<link rel="stylesheet" type="text/css"
+	href="/static/css/lib/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/app.css">
+<script src="/static/js/lib/jquery-2.1.1.min.js"></script>
+<script src="/static/js/lib/bootstrap.js"></script>
+<script src="/static/js/lib/knockout-3.2.0.js"></script>
+<script src="/static/js/lib/jquery.atmosphere.js"
+	xmlns="http://www.w3.org/1999/html"></script>
+
+<script src="/static/js/lib/Base.js"></script>
+<script src="/static/js/app/index.js"></script>
+</head>
+<body>
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Scalatra Web Sockets Atmosphere
+					KnockOut</a>
+			</div>
+		</div>
+	</div>
+
+	<br />
+	<div id="content" class="container">
+		<div id="trello">
+			<div class="panel panel-danger" id="runawayFutures">
+				<div class="panel-heading">Trello</div>
+				<div class="panel-body">
+
+					<h4 class="text-primary">Add a card and see it being added in
+						a different tab</h4>
+
+					<br />
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-warning">
+								<div class="panel-heading">TODO</div>
+
+
+								<div class="panel-body">
+									<div id="trelloTodo"></div>
+									<br />
+									<button class="btn btn-danger"
+										data-bind="click: function() {addNewCard('trelloTodo')}">Add
+										Card</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-primary">
+								<div class="panel-heading">DOING...</div>
+
+								<div class="panel-body">
+
+									<div id="trelloDoing"></div>
+
+									<br />
+
+									<button class="btn btn-primary"
+										data-bind="click: function() {addNewCard('trelloDoing')}">Add
+										Card</button>
+								</div>
+							</div>
+						</div>
+					   </div>	
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-success">
+									<div class="panel-heading">DONE!</div>
+
+									<div class="panel-body">
+
+										<div id="trelloDone"></div>
+
+										<br />
+
+										<button class="btn btn-success"
+											data-bind="click: function() {addNewCard('trelloDone')}">Add
+											Card</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br /> <br />
+			<div class="panel panel-primary" id="runawayFutures">
+				<div class="panel-heading">Runaway Futures</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="text-primary"></h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p class="bg-warning blurb text-primary">A pool of futures
+								do work in the background, return stuff to us, and then we try
+								to cancel them</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br />
+							<button type="button"
+								data-bind="click: startFutures, visible: !futuresStarted()"
+								class="btn btn-warning" style="display: none">Start</button>
+							<button type="button"
+								data-bind="click: stopFutures, visible: futuresStarted()"
+								class="btn btn-danger" style="display: none">Stop</button>
+						</div>
+						<div id="fileContent" class="col-md-10"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+		$(document).ready(function() {
+		  var indexViewModel = new IndexViewModel();
+		  ko.applyBindings(indexViewModel);
+		});
+		</script>
+</body>
+</html>
+
